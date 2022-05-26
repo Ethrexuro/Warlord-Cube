@@ -8,10 +8,14 @@ public class PlayerCP2 : MonoBehaviour{
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _turnSpeed = 360;
     private Vector3 _input;
-
+Animator animator;
+void Start(){
+    animator = GetComponentInChildren <Animator>();
+}
     void Update() {
         GatherInput();
         Look();
+        animator.SetFloat("Speed", _input.magnitude);
     }
 
     void FixedUpdate() {
