@@ -59,12 +59,15 @@ namespace com.MyCompany.MyGame
 
     public override void OnJoinRandomFailed(short returnCode, string message){
         Debug.Log("Successfully Create Room");
-            PhotonNetwork.CreateRoom(null, new RoomOptions());
+            PhotonNetwork.CreateRoom(null, new RoomOptions{ MaxPlayers = maxPlayersPerRoom });
     }
 
     public override void OnJoinedRoom(){
         Debug.Log("Successfully joined Room");
     }
+    [Tooltip("The Maxium number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
+    [SerializeField]
+    private byte maxPlayersPerRoom = 2;
 }
 
 }

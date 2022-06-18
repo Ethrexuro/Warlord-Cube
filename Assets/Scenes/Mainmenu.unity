@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 393519867}
   - component: {fileID: 393519866}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text Online Multi-player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -797,13 +797,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: '1. Press Play and select and name your fighter.
 
-    2. WSAD & Arrow Keys
-    to move.
+    2. P1 WSAD & P2 Arrow
+    Keys to move.
 
     3. F & Control (near to the arrow keys) to shoot .
 
-    4. Kill
-    the opposing team to collect points.
+    4.
+    Kill the opposing team to collect points.
 
     5. Have fun playing the game :D.'
   m_isRightToLeft: 0
@@ -1028,7 +1028,7 @@ GameObject:
   - component: {fileID: 883621012}
   - component: {fileID: 883621011}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button Online Multi-player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1097,7 +1097,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 883621012}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2098853132}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: Online Multi-player
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &883621012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,6 +1494,7 @@ GameObject:
   - component: {fileID: 2036174157}
   - component: {fileID: 2036174156}
   - component: {fileID: 2036174155}
+  - component: {fileID: 2036174158}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1554,6 +1567,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2036174158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036174154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &2098853127
 GameObject:
   m_ObjectHideFlags: 0
