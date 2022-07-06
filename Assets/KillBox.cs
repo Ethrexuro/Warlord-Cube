@@ -9,5 +9,8 @@ public class KillBox : MonoBehaviour
         if(Other.tag == "Player"){
             Other.GetComponent<Health>().TakeDamage(Damage);
         }
+        if (Other.tag == "Player1" || Other.tag == "Player2"){
+            Other.GetComponent<HealthOnline>().TakeDamage(Damage);
+        }
     }
 }

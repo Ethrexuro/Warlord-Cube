@@ -9,8 +9,8 @@ public class ShootOnline : MonoBehaviour
     public PlayerProjectileOnline projectile;
     public Transform spawnPoint;
     PhotonView view;
-    void start(){
-        PlayerNumber = GetComponentInParent<PlayerDataOnline>().PlayerNumber;
+    void Start(){
+        PlayerNumber = GetComponent<PlayerDataOnline>().PlayerNumber;
         view = GetComponent<PhotonView>();
     }
     void Update(){
