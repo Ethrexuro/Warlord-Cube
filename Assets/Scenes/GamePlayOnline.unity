@@ -1277,6 +1277,8 @@ MonoBehaviour:
   playersPrefabs:
   - {fileID: 5529276106906262738, guid: 4eaf18475f7535e4ab96e9ec7383b689, type: 3}
   - {fileID: 345684297422444503, guid: 73a9f78bdbefc0c4a8edcaf2d8512af0, type: 3}
+  player1Health: {fileID: 2089891334}
+  player2Health: {fileID: 687444552}
   spawnPoints:
   - {fileID: 518883762}
   - {fileID: 2122470552}

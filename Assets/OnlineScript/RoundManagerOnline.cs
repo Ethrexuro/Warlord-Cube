@@ -17,6 +17,7 @@ public int RoundTime;
 [Tooltip("Players")]
 public GameObject[] players;
 public GameObject[] playersPrefabs;
+public Slider player1Health, player2Health;
 public Transform[] spawnPoints;
 public GameObject PanelEndGame;
 public TMP_Text P1;
