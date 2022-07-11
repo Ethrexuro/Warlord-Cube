@@ -62,12 +62,14 @@ public void CollectReferencesToPlayers(){
 public void AddScore(int PlayerDying, int PlayerKilling){
     if (PlayerDying == PlayerKilling || PlayerKilling == 0) players[PlayerDying - 1].GetComponent<PlayerDataOnline>().score--;
     else{
-    players[PlayerDying - 1].GetComponent<PlayerDataOnline>().score++;
+    players[PlayerKilling - 1].GetComponent<PlayerDataOnline>().score++;
     var h = players[PlayerKilling - 1].GetComponent<HealthOnline>();
     if (players[PlayerKilling - 1].GetComponent<PlayerDataOnline>().score >= maxkills){
         EndGame();
     }
     }
+    P1Score.text = players[0].GetComponent<PlayerDataOnline>().score.ToString();
+    P2Score.text = players[1].GetComponent<PlayerDataOnline>().score.ToString();
 }
 public IEnumerator Timer(int time){
     WaitForSeconds WFS = new WaitForSeconds(1f);

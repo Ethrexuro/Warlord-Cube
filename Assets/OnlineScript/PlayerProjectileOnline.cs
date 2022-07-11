@@ -19,7 +19,7 @@ void start()
 }
 private void OnTriggerEnter(Collider other)
 {
-    if (other.CompareTag("Player"))
+    if (other.CompareTag("Player1") || other.CompareTag("Player2"))
     {
         if (other.GetComponent<PlayerDataOnline>().PlayerNumber == shotBy) return;
         other.GetComponent<HealthOnline>().view.RPC("TakeDamage",RpcTarget.All, damage, shotBy);

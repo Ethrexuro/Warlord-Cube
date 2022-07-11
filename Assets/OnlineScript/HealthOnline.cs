@@ -14,31 +14,37 @@ public PlayerUIupdator UI;
 public PlayerDataOnline PD;
 public PhotonView view;
 private bool isStarted = false;
-private void start(){
+private void Start(){
     PD = GetComponent<PlayerDataOnline>();
     view = PD.view;
     if(PD.PlayerNumber == 1){
-        UI = GameObject.FindGameObjectWithTag("Player1Canvas").GetComponent<PlayerUIupdator>();
+        RoundManagerOnline.instance.player1Health.value = health;
+        RoundManagerOnline.instance.player1Health.value = health;
     }
     else if (PD.PlayerNumber ==2){
-        UI = GameObject.FindGameObjectWithTag("Player2Canvas").GetComponent<PlayerUIupdator>();
+            RoundManagerOnline.instance.player1Health.value = health;
+            RoundManagerOnline.instance.player1Health.value = health;
     }
-    UI.UpdatePlayerUI(PD.PlayerName, PD.score, health, maxHealth);
     RoundManagerOnline.instance.view.RPC("CollectReferencesToPlayers", RpcTarget.All);
     isStarted = true;
 }
 void OnEnable(){
     if (isStarted);
-//    UI.UpdatePlayerUI(PD.PlayerName, PD.score, health, maxHealth);
 }
 [PunRPC]
 public void TakeDamage(int damage, int PlayerAttacking = 0){
     if (isDead && !canBeDamaged) return;
     health -= damage;
-    UI.UpdatePlayerUI(PD.PlayerName, PD.score, health, maxHealth);
-    if(health <= 0){
+    if (PD.PlayerNumber == 1){
+        RoundManagerOnline.instance.player1Health.value = health;
+    }
+    else if (PD. PlayerNumber == 2){
+        RoundManagerOnline.instance.player2Health.value = health;
+    }
+    if (health <= 0)
+    {
         health = 0;
-        Death(PlayerAttacking);
+        Death(PlayerAttacking);  
     }
     canBeDamaged = false;
     Invoke("ResetDamage", 1);
@@ -53,6 +59,12 @@ public void Death(int KilledBy){
     gameObject.SetActive(false);
 }
 private void ResetDamage(){
+    if (PD.PlayerNumber == 1){
+        RoundManagerOnline.instance.player1Health.value = health;
+    }
+    else if (PD.PlayerNumber == 2){
+        RoundManagerOnline.instance.player2Health.value = health;
+    }
     canBeDamaged = true;
-}
+    }
 }
